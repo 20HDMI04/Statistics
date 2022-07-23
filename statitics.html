@@ -8,6 +8,23 @@
     <title>Statistics Calculator</title>
 </head>
 <body>
+    <div class="popup">
+        <button id="close">&times;</button>
+        <h2>Add meg a paramétereket!</h2>
+        <h2>(Mennyi sor kell a táblázatodhoz?)</h2>
+        <table class="table">
+            <tr>
+                <td><p id="p">Grid Height:</p></td>
+                <td><input id="n1" type="number" name="height" min="1" value="1"></td>
+            </tr>
+            <tr>
+                <td><p id="p">Grid Width:</p></td>
+                <td> <input id="n2" type="number" name="width" min="1" value="1"></td>
+            </tr>
+            <input id="close1" type="submit" onclick="makegrid()">
+            
+        </table>
+    </div>
     <table id="body">
         <tr>
             <td><p>Mennyiség</p></td>
