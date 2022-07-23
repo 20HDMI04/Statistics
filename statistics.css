@@ -1,0 +1,17 @@
+table{
+        margin: auto;
+        width: 650px;
+        border: 1px solid black;
+        background-color: black;
+}
+td{
+        text-align: center;
+        border: 1px solid black;
+        background-color: antiquewhite;
+        
+}
+p{
+    font-weight: bold;
+    margin: 1px;
+}
+
