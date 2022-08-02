@@ -34,6 +34,7 @@ var td = document.querySelectorAll('td')
 for (let i = 6; i < td.length; i++) {
   var input = document.createElement('input')
   input.type = 'text'
-  td[i].appendChild(input)
+  td[i].appendChild(input).setAttribute("id", `td[${i}]`)
  }
 }
+
