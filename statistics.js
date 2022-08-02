@@ -3,7 +3,7 @@ window.addEventListener("load", function(){
         function open(event){
             document.querySelector(".popup").style.display = "block";
         },
-        1000
+        500
     )
 });
 
@@ -26,7 +26,14 @@ function makegrid() // function called after submit button is clicked
     for (var c = 0; c < cn; c++) {
       var y = x.insertCell(c); //insert cells to each row
     }
-  }id()
+  }inputmaker()
 }
-function id(){
+
+function inputmaker(){
+var td = document.querySelectorAll('td')
+for (let i = 6; i < td.length; i++) {
+  var input = document.createElement('input')
+  input.type = 'text'
+  td[i].appendChild(input)
+ }
 }
