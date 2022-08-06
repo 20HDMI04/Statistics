@@ -46,18 +46,21 @@ function inputselector(){
 
 const quantitynumbers = []
 const frequencynumbers = []
+
 function numsorter(){
-  for (let i = 6; i < window.mynodelist.length; i++) {
-    if (i & 1 == 1) {
-      frequencynumbers.push[window.mynodelist[i].value];
-    } else {
-      quantitynumbers.push[window.mynodelist[i].value];
-      }
+  let ind = 4;
+  while (ind < window.mynodelist.length) {
+    if ( ind & 1 == 1) {
+      frequencynumbers.push(window.mynodelist[ind].value);
+  } else {
+      quantitynumbers.push(window.mynodelist[ind].value);
   }
-  ListSorted();
+   ind++; 
+  }
+    ListSorted();
 }
+
 function ListSorted(){
   console.log(quantitynumbers);
   console.log(frequencynumbers);
 }
- 
