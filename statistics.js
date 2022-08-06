@@ -30,11 +30,34 @@ function makegrid() // function called after submit button is clicked
 }
 
 function inputmaker(){
-var td = document.querySelectorAll('td')
+const td = document.querySelectorAll('td')
 for (let i = 6; i < td.length; i++) {
-  var input = document.createElement('input')
-  input.type = 'text'
-  td[i].appendChild(input).setAttribute("id", `td[${i}]`)
+  const input = document.createElement('input')
+  input.type = 'number'
+  td[i].appendChild(input).setAttribute("id", `${i}`)
  }
+inputselector()
 }
+function inputselector(){
+  const myNodelist = document.querySelectorAll('input')
+  window.mynodelist = myNodelist
 
+  }
+
+const quantitynumbers = []
+const frequencynumbers = []
+function numsorter(){
+  for (let i = 6; i < window.mynodelist.length; i++) {
+    if (i & 1 == 1) {
+      frequencynumbers.push[window.mynodelist[i].value];
+    } else {
+      quantitynumbers.push[window.mynodelist[i].value];
+      }
+  }
+  ListSorted();
+}
+function ListSorted(){
+  console.log(quantitynumbers);
+  console.log(frequencynumbers);
+}
+ 
