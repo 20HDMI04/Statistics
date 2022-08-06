@@ -47,6 +47,13 @@ function inputselector(){
 const quantitynumbers = []
 const frequencynumbers = []
 
+const modus = []
+const median = []
+const upperquartile = []
+const quartile = []
+const lowerquartile = []
+
+
 function numsorter(){
   let ind = 4;
   while (ind < window.mynodelist.length) {
@@ -57,10 +64,24 @@ function numsorter(){
   }
    ind++; 
   }
-    ListSorted();
+    Modus();
 }
 
-function ListSorted(){
-  console.log(quantitynumbers);
-  console.log(frequencynumbers);
+function Modus(){
+  let idx = 0;
+  while (idx < quantitynumbers.length) {
+    if (quantitynumbers[idx].value == Math.max(...quantitynumbers)) {
+      console.log(idx);
+    } else {idx++;
+  }
 }
+}
+  /*
+  const modusresult = frequencynumbers.indexOf()
+  console.log(modusresult)
+  Math.max(...quantitynumbers)
+  const idx = 0;
+  if(window.mynodelist[idx].value == Math.max(...quantitynumbers)) {
+    console.log(idx)
+  } */
+
