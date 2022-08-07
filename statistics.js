@@ -44,14 +44,16 @@ function inputselector(){
 
   }
 
-const quantitynumbers = []
-const frequencynumbers = []
+const quantitynumbers = [];
+const frequencynumbers = [];
 
-const modus = []
-const median = []
-const upperquartile = []
-const quartile = []
-const lowerquartile = []
+const modus = [];
+const median = [];
+const quartilelist = [];
+const upperquartile = [];
+const lowerquartile = [];
+const average = [];
+const dispersion = [];
 
 
 function numsorter(){
@@ -68,20 +70,22 @@ function numsorter(){
 }
 
 function Modus(){
-  let idx = 0;
-  while (idx < quantitynumbers.length) {
-    if (quantitynumbers[idx].value == Math.max(...quantitynumbers)) {
-      console.log(idx);
-    } else {idx++;
+  let idx1 = -1;
+  while (idx1 < quantitynumbers.length) {
+    if (quantitynumbers[idx1] == Math.max(...quantitynumbers)) {
+      modus.push(frequencynumbers[idx1])
+      break;
+    } else {
+      idx1++;
+    }
   }
+  median()
 }
+
+function median(){
+    for (let i= 0; i < quantitynumbers.length; i++) {
+      quartilelist.push()
+    }
 }
-  /*
-  const modusresult = frequencynumbers.indexOf()
-  console.log(modusresult)
-  Math.max(...quantitynumbers)
-  const idx = 0;
-  if(window.mynodelist[idx].value == Math.max(...quantitynumbers)) {
-    console.log(idx)
-  } */
+ 
 
