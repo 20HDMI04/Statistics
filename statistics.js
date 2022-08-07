@@ -79,13 +79,19 @@ function Modus(){
       idx1++;
     }
   }
-  median()
+  median1()
 }
 
-function median(){
-    for (let i= 0; i < quantitynumbers.length; i++) {
-      quartilelist.push()
+function median1(){
+  let idx2 = 0;
+   while (idx2 < quantitynumbers.length) {
+    let idx3 = 0;
+    while( idx3 < quantitynumbers[idx2]){
+      quartilelist.push(frequencynumbers[idx2])
     }
+    idx3++;
+  }
+  idx2++;
 }
  
 
