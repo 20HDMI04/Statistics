@@ -48,7 +48,7 @@ const quantitynumbers = [];
 const frequencynumbers = [];
 
 const modus = [];
-const median = [];
+const med = [];
 const quartilelist = [];
 const upperquartile = [];
 const lowerquartile = [];
@@ -82,13 +82,38 @@ function Modus(){
   median1()
 }
 
-function median1(){
 
-}
-/*for (let idx2 = 0; idx2 < quantitynumbers.length; idx2++){
-  let idx3 = 0;
-  while(idx3 < quantitynumbers[idx2]){
-        quartilelist.push(frequencynumbers[idx2])
+function median1(){
+  for (let idx2 = 0; idx2 < quantitynumbers.length; idx2++) {
+    for (let idx3 = 0; idx3 < quantitynumbers[idx2]; idx3++) {
+      quartilelist.push(frequencynumbers[idx2])
+    }
   }
-  idx3++;
-}*/
+  median2()
+}
+
+function median2(){
+  let mediannum1 = quartilelist.length / 2;
+  let mediannum2 = mediannum1 + 1;
+  let mediannum3 = mediannum1 - 1;
+  let mediannum4 = Math.floor(quartilelist.length / 2);
+  
+  if (quartilelist.length & 1 == 1) {
+                med.push(quartilelist[mediannum4]);
+  } else {      
+                if(quartilelist.length == 2){
+                  if (quartilelist[mediannum1] == quartilelist[mediannum3]) {
+                    med.push(quartilelist[mediannum1]);
+                } else {
+                    med.push(parseInt(quartilelist[mediannum1]) + parseInt(quartilelist[mediannum3]) / 2);
+              }
+      } else /*sanyi*/ {
+                if (quartilelist[mediannum3] == quartilelist[mediannum1]) {
+                    med.push(quartilelist[mediannum1]);
+              } else {
+                    med.push(parseInt(quartilelist[mediannum1]) + parseInt(quartilelist[mediannum3]) / 2);
+              }
+        }
+                
+ }
+}
