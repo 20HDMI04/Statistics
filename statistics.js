@@ -83,15 +83,12 @@ function Modus(){
 }
 
 function median1(){
-  let idx2 = 0;
-   while (idx2 < quantitynumbers.length) {
-    let idx3 = 0;
-    while( idx3 < quantitynumbers[idx2]){
-      quartilelist.push(frequencynumbers[idx2])
-    }
-    idx3++;
-  }
-  idx2++;
-}
- 
 
+}
+/*for (let idx2 = 0; idx2 < quantitynumbers.length; idx2++){
+  let idx3 = 0;
+  while(idx3 < quantitynumbers[idx2]){
+        quartilelist.push(frequencynumbers[idx2])
+  }
+  idx3++;
+}*/
