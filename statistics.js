@@ -121,9 +121,10 @@ function median2(){
 
  function calculatequartileup(){
     if (quartilelist.length & 1 == 1) {
-    let up_quartilenum7 = (((quartilelist.length - 1) / 2) / 2);
-    let up_quartilenum6 = up_quartilenum7 + 1;
-    upperquartile.push(parseInt(quartilelist[up_quartilenum7] + quartilelist[up_quartilenum6] / 2))
+    let up_quartilenum7 = ((quartilelist.length - 1) / 2);
+    let up_quartilenum8 = (up_quartilenum7 + (((quartilelist.length - 1) / 2) / 2))
+    let up_quartilenum6 = up_quartilenum8 + 1;
+    upperquartile.push(parseInt(quartilelist[up_quartilenum8] + quartilelist[up_quartilenum6] / 2))
     } else {
       let upperquartilenum = (quartilelist.length + 1) * 0.75;
       if (upperquartilenum % 1 != 0) {
