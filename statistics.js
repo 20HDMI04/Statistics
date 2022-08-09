@@ -138,7 +138,7 @@ function median2(){
         if (up_quartilevariable4 & 1 == 1) {
           //páratlan fél
           let up_quartilevariable5 = up_quartilevariable4 / 2;
-          upperquartile.push(quartilelist[Math.ceil(parseInt(up_quartilevariable1 + up_quartilevariable5))]);
+          upperquartile.push(quartilelist[Math.ceil(parseInt(up_quartilevariable4 + up_quartilevariable5))]);
         } else {
           //páros fél 
           let up_quartilevariable6 = up_quartilevariable4 / 2;
