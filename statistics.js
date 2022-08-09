@@ -166,11 +166,11 @@ function median2(){
           }
   } else {
     //páros
-    let low_quartilevariable5 = (quartilelist.length -2) / 2;
+          let low_quartilevariable5 = (quartilelist.length -2) / 2;
           if (low_quartilevariable5 & 1 == 1) {
             //páratlanfél
             let low_quartilevariable6 = low_quartilevariable5 / 2;
-            lowerquartile.push(Math.floor(low_quartilevariable6))
+            lowerquartile.push(quartilelist[Math.floor(low_quartilevariable6)])
           } else {
             //párosfél
             let low_quartilevariable7 = low_quartilevariable5 / 2;
