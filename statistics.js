@@ -120,23 +120,35 @@ function median2(){
 }
 
  function calculatequartileup(){
-    let upperquartilenum = (quartilelist.length + 1) * 0.75;
-    if (upperquartilenum % 1 != 1) {
-      upperquartile.push(quartilelist[upperquartilenum]);
+    if (quartilelist.length & 1 == 1) {
+    let up_quartilenum7 = (((quartilelist.length - 1) / 2) / 2);
+    let up_quartilenum6 = up_quartilenum7 + 1;
+    upperquartile.push(parseInt(quartilelist[up_quartilenum7] + quartilelist[up_quartilenum6] / 2))
     } else {
-      let upperquartilenum1 = Math.floor(upperquartilenum);
-      upperquartile.push(quartilelist[upperquartilenum1]);
+      let upperquartilenum = (quartilelist.length + 1) * 0.75;
+      if (upperquartilenum % 1 != 0) {
+        let upperquartilenum1 = Math.floor(upperquartilenum);
+        upperquartile.push(quartilelist[upperquartilenum1]);
+      } else {
+        upperquartile.push(quartilelist[upperquartilenum]);
+      }
     }
     calculatequartilelow()
  }
 
  function calculatequartilelow(){
-  let low_quartilenum1 = (quartilelist.length + 1) * 0.25;
-  let low_quartilenum3 = quartilelist.length * 0.25;
-  if (low_quartilenum1 % 1 != 1) {
-    lowerquartile.push(quartilelist[low_quartilenum3]);
+  if (quartilelist.length & 1 == 1) {
+    let low_quartilenum0 = (((quartilelist.length - 1) / 2) / 2);
+    let low_quartilenum4 = low_quartilenum0 - 1;
+    lowerquartile.push(parseInt(quartilelist[low_quartilenum4] + quartilelist[low_quartilenum0] / 2))
   } else {
+    let low_quartilenum1 = (quartilelist.length + 1) * 0.25;
+  if (low_quartilenum1 % 1 != 0) {
     let low_quartilenum2 = Math.floor(low_quartilenum1);
     lowerquartile.push(quartilelist[low_quartilenum2]);
+  } else {
+    let low_quartilenum3 = low_quartilenum1 - 1;
+    lowerquartile.push(quartilelist[low_quartilenum3]);
+  }
   }
  }
