@@ -130,7 +130,7 @@ function median2(){
         } else {
           //páros fél 
           let up_quartilevariable3 = up_quartilevariable1 / 2;
-          upperquartile.push(parseInt((quartilelist[parseInt(up_quartilevariable1 + up_quartilevariable3)] + quartilelist[parseInt(up_quartilevariable1 + up_quartilevariable3 +1)]) / 2));
+          upperquartile.push(parseInt(parseInt(quartilelist[up_quartilevariable1 + up_quartilevariable3]) + parseInt(quartilelist[up_quartilevariable1 + up_quartilevariable3 + 1])) /2);
         }
     } else {
       //páros
@@ -157,12 +157,12 @@ function median2(){
           if (low_quartilevariable1 & 1 == 1) {
             //páratlanfél
             let low_quartilevariable2 = low_quartilevariable1 / 2;
-            lowerquartile.push(Math.floor(low_quartilevariable2))
+            lowerquartile.push(quartilelist[Math.floor(low_quartilevariable2)])
           } else {
             //párosfél
             let low_quartilevariable3 = low_quartilevariable1 / 2;
             let low_quartilevariable4 = low_quartilevariable3 - 1;
-            lowerquartile.push(parseInt((quartilelist[low_quartilevariable4] + quartilelist[low_quartilevariable3]) /2))
+            lowerquartile.push(parseInt(parseInt(parseInt(quartilelist[low_quartilevariable4]) + parseInt(quartilelist[low_quartilevariable3])) /2))
           }
   } else {
     //páros
