@@ -151,36 +151,31 @@ function median2(){
 
  
  function calculatequartilelow(){
-  
- }
-
- /*if (quartilelist.length & 1 == 1) {
-  let up_quartilenum7 = ((quartilelist.length - 1) / 2);
-  let up_quartilenum8 = (up_quartilenum7 + (((quartilelist.length - 1) / 2) / 2))
-  let up_quartilenum6 = up_quartilenum8 + 1;
-  upperquartile.push(parseInt(quartilelist[up_quartilenum8] + quartilelist[up_quartilenum6] / 2))
+  if (quartilelist.length & 1 == 1) {
+    //páratlan
+          let low_quartilevariable1 = (quartilelist.length -1) / 2;
+          if (low_quartilevariable1 & 1 == 1) {
+            //páratlanfél
+            let low_quartilevariable2 = low_quartilevariable1 / 2;
+            lowerquartile.push(Math.floor(low_quartilevariable2))
+          } else {
+            //párosfél
+            let low_quartilevariable3 = low_quartilevariable1 / 2;
+            let low_quartilevariable4 = low_quartilevariable3 - 1;
+            lowerquartile.push(parseInt((quartilelist[low_quartilevariable4] + quartilelist[low_quartilevariable3]) /2))
+          }
   } else {
-    let upperquartilenum = (quartilelist.length + 1) * 0.75;
-    if (upperquartilenum % 1 != 0) {
-      let upperquartilenum1 = Math.floor(upperquartilenum);
-      upperquartile.push(quartilelist[upperquartilenum1]);
-    } else {
-      upperquartile.push(quartilelist[upperquartilenum]);
-    }
-  }*/
-
-
-/* if (quartilelist.length & 1 == 1) {
-  let low_quartilenum0 = (((quartilelist.length - 1) / 2) / 2);
-  let low_quartilenum4 = low_quartilenum0 - 1;
-  lowerquartile.push(parseInt(quartilelist[low_quartilenum4] + quartilelist[low_quartilenum0] / 2))
-} else {
-  let low_quartilenum1 = (quartilelist.length + 1) * 0.25;
-if (low_quartilenum1 % 1 != 0) {
-  let low_quartilenum2 = Math.floor(low_quartilenum1);
-  lowerquartile.push(quartilelist[low_quartilenum2]);
-} else {
-  let low_quartilenum3 = low_quartilenum1 - 1;
-  lowerquartile.push(quartilelist[low_quartilenum3]);
+    //páros
+    let low_quartilevariable5 = (quartilelist.length -2) / 2;
+          if (low_quartilevariable5 & 1 == 1) {
+            //páratlanfél
+            let low_quartilevariable6 = low_quartilevariable5 / 2;
+            lowerquartile.push(Math.floor(low_quartilevariable6))
+          } else {
+            //párosfél
+            let low_quartilevariable7 = low_quartilevariable5 / 2;
+            let low_quartilevariable8 = low_quartilevariable7 - 1;
+            lowerquartile.push(parseInt((quartilelist[low_quartilevariable8] + quartilelist[low_quartilevariable7]) /2))
+    } 
+  }
 }
-}*/
