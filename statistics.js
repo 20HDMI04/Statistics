@@ -107,7 +107,7 @@ function median2(){
                 } else {
                     med.push(parseInt(quartilelist[mediannum1]) + parseInt(quartilelist[mediannum3]) / 2);
               }
-      } else /*sanyi*/ {
+      } else {
                 if (quartilelist[mediannum3] == quartilelist[mediannum1]) {
                     med.push(quartilelist[mediannum1]);
               } else {
@@ -116,4 +116,27 @@ function median2(){
         }
                 
  }
+ calculatequartileup()
 }
+
+ function calculatequartileup(){
+    let upperquartilenum = (quartilelist.length + 1) * 0.75;
+    if (upperquartilenum % 1 != 1) {
+      upperquartile.push(quartilelist[upperquartilenum]);
+    } else {
+      let upperquartilenum1 = Math.floor(upperquartilenum);
+      upperquartile.push(quartilelist[upperquartilenum1]);
+    }
+    calculatequartilelow()
+ }
+
+ function calculatequartilelow(){
+  let low_quartilenum1 = (quartilelist.length + 1) * 0.25;
+  let low_quartilenum3 = quartilelist.length * 0.25;
+  if (low_quartilenum1 % 1 != 1) {
+    lowerquartile.push(quartilelist[low_quartilenum3]);
+  } else {
+    let low_quartilenum2 = Math.floor(low_quartilenum1);
+    lowerquartile.push(quartilelist[low_quartilenum2]);
+  }
+ }
