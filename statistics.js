@@ -202,8 +202,8 @@ function average_calculate() {
 
 function dispersion_calculate() {
   let dispersionvariablelist = [];
-  for (let index = 0; index < array.length; index++) {
-    dispersionvariablelist.push(parseInt(quantitynumbers[index](parseInt(parseInt(parseInt(frequencynumbers[index]) - average)**2))));    
+  for (let index = 0; index < quantitynumbers.length; index++) {
+    dispersionvariablelist.push(parseInt(parseInt(quantitynumbers[index]*(parseInt(parseInt(frequencynumbers[index]) - average)))**2));    
   };
   let dispersionvariablesum = 0;
   for (let idx4 = 0; idx4 < dispersionvariablelist.length; idx4++) {
