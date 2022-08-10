@@ -200,16 +200,16 @@ function average_calculate() {
   dispersion_calculate();
 }
 
+let dispersionvariablelist = [];
 function dispersion_calculate() {
-  let dispersionvariablelist = [];
   for (let index = 0; index < quantitynumbers.length; index++) {
-    dispersionvariablelist.push(parseInt(parseInt(quantitynumbers[index]*(parseInt(parseInt(frequencynumbers[index]) - average)))**2));    
+    dispersionvariablelist.push(quantitynumbers[index]*((frequencynumbers[index] - average)**2));    
   };
   let dispersionvariablesum = 0;
   for (let idx4 = 0; idx4 < dispersionvariablelist.length; idx4++) {
-    dispersionvariablesum = parseInt(dispersionvariablesum + parseInt(dispersionvariablelist[idx4]));
+    dispersionvariablesum = dispersionvariablesum + dispersionvariablelist[idx4];
   }
-  let dispersion_numcalculated = Math.sqrt(parseInt(dispersionvariablesum / 2))
+  let dispersion_numcalculated = Math.sqrt(dispersionvariablesum / 2)
   dispersion.push(dispersion_numcalculated.toFixed(2))
 }
 
