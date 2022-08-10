@@ -209,6 +209,7 @@ function dispersion_calculate() {
   for (let idx4 = 0; idx4 < dispersionvariablelist.length; idx4++) {
     dispersionvariablesum = parseInt(dispersionvariablesum + parseInt(dispersionvariablelist[idx4]));
   }
-  dispersion.push(Math.sqrt(parseInt(dispersionvariablesum / 2)))
+  let dispersion_numcalculated = Math.sqrt(parseInt(dispersionvariablesum / 2))
+  dispersion.push(dispersion_numcalculated.toFixed(2))
 }
 
