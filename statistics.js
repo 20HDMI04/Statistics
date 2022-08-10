@@ -43,6 +43,7 @@ function inputselector(){
   window.mynodelist = myNodelist
 
   }
+//quantitynumbers is a frequencynumbers and frequencynumber is a quantitynumbers
 
 const quantitynumbers = [];
 const frequencynumbers = [];
@@ -178,4 +179,28 @@ function median2(){
             lowerquartile.push(parseInt((quartilelist[low_quartilevariable8] + quartilelist[low_quartilevariable7]) /2))
     } 
   }
+  average_calculate()
+}
+
+let calculatelist = [];
+let total = 0;
+let quantitynumbertotal = 0;
+function average_calculate() {
+  for (let average_variable1 = 0; average_variable1 < quantitynumbers.length; average_variable1++) {
+    calculatelist.push(parseInt(quantitynumbers[average_variable1] * frequencynumbers[average_variable1]));
+  }
+  for (let indx = 0; indx < calculatelist.length; indx++) {
+    total = parseInt(total + calculatelist[indx]);
+  }
+  for (let avr = 0; avr < quantitynumbers.length; avr++) {
+    quantitynumbertotal = parseInt(parseInt(quantitynumbertotal) + parseInt(quantitynumbers[avr]));
+  }
+  let average_num = (parseInt(total) / parseInt(quantitynumbertotal));
+  average.push(average_num.toFixed(2));
+  dispersion_calculate();
+}
+
+function dispersion_calculate() {
+  let dispersionvariablelist = [];
+  
 }
