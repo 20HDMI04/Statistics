@@ -165,7 +165,7 @@ function median2(){
             //párosfél
             let low_quartilevariable3 = low_quartilevariable1 / 2;
             let low_quartilevariable4 = low_quartilevariable3 - 1;
-            lowerquartile.push(parseInt(parseInt(parseInt(quartilelist[low_quartilevariable4]) + parseInt(quartilelist[low_quartilevariable3])) /2))
+            lowerquartile.push(Number(Number(Number(quartilelist[low_quartilevariable4]) + Number(quartilelist[low_quartilevariable3])) /2))
           }
   } else {
     //páros
