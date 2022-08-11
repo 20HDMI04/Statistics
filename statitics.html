@@ -8,7 +8,6 @@
     <title>Statistics Calculator</title>
 </head>
 <body>
-    <input type="submit" onclick="numsorter()">
     <div class="popup">
         <button id="close">&times;</button>
         <h2>Add meg a paramétereket!</h2>
@@ -28,7 +27,9 @@
     <table class="body">
         <tr>
             <td><p id="meny">Gyakoriság</p></td>
-            <td><p id="gyakor">Mennyiség</p></td>
+            <td><div class="flexbox">
+                <p id="gyakor">Mennyiség</p><input type="submit" onclick="numsorter()">
+            </div></td>
         </tr>
         <table class="body" id="table">
     </table>
