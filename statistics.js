@@ -111,8 +111,8 @@ function median2(){
       } else {
                 if (quartilelist[mediannum3] == quartilelist[mediannum1]) {
                     med.push(quartilelist[mediannum1]);
-              } else {//problem
-                    med.push(Number((Number(quartilelist[mediannum1]) + Number(quartilelist[mediannum2])) /2));
+              } else {
+                    med.push(Number((Number(quartilelist[mediannum1]) + Number(quartilelist[mediannum3])) /2));
               }
         }
                 
@@ -140,10 +140,12 @@ function median2(){
           //páratlan fél
           let up_quartilevariable5 = up_quartilevariable4 / 2;
           upperquartile.push(quartilelist[Math.ceil(parseInt(up_quartilevariable4 + up_quartilevariable5))]);
-        } else {//problem
+        } else {
           //páros fél 
           let up_quartilevariable6 = up_quartilevariable4 / 2;
-          upperquartile.push(parseInt((quartilelist[parseInt(up_quartilevariable4 + up_quartilevariable6)] + quartilelist[parseInt(up_quartilevariable4 + up_quartilevariable6 +1)]) / 2));
+          let up_quartilevariable7 = up_quartilevariable4 + 1;
+          let up_quartilevariable8 = up_quartilevariable7 + 1;
+          upperquartile.push((Number(quartilelist[up_quartilevariable7 + up_quartilevariable6]) + Number(quartilelist[up_quartilevariable8 + up_quartilevariable6])) / 2);
           
     }
   }
@@ -176,7 +178,7 @@ function median2(){
             //párosfél
             let low_quartilevariable7 = low_quartilevariable5 / 2;
             let low_quartilevariable8 = low_quartilevariable7 - 1;
-            lowerquartile.push(parseInt((quartilelist[low_quartilevariable8] + quartilelist[low_quartilevariable7]) /2))
+            lowerquartile.push(Number(Number(Number(quartilelist[low_quartilevariable8]) + Number(quartilelist[low_quartilevariable7])) /2))
     } 
   }
   average_calculate()
