@@ -14,12 +14,12 @@
         <h2>(Mennyi sor kell a táblázatodhoz?)</h2>
         <table class="table">
             <tr>
-                <td><p id="p">Sor(magasság):</p></td>
-                <td><input id="n1" type="number" name="height" min="1" value="1"></td>
+                <td class="td1"><p id="p">Sor(magasság):</p></td>
+                <td class="td1"><input id="n1" type="number" name="height" min="1" value="1"></td>
             </tr>
             <tr>
-                <td><p class="p">Szélesség</p></td>
-                <td> <input id="n2" type="number" name="width" min="2" value="2" disabled></td>
+                <td class="td1"><p class="p">Szélesség</p></td>
+                <td class="td1"> <input id="n2" type="number" name="width" min="2" value="2" disabled></td>
             </tr>
             </table>
             <input id="close1" type="submit" onclick="makegrid()">
@@ -28,7 +28,7 @@
         <tr>
             <td><p id="meny">Gyakoriság</p></td>
             <td><div class="flexbox">
-                <p id="gyakor">Mennyiség</p><input type="submit" onclick="numsorter()">
+                <p id="gyakor">Mennyiség</p><input type="submit" value="Eredmény"onclick="numsorter()">
             </div></td>
         </tr>
         <table class="body" id="table">
