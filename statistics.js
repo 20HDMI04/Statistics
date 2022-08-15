@@ -213,5 +213,21 @@ function dispersion_calculate() {
   }
   let dispersion_numcalculated = Math.sqrt(dispersionvariablesum / 2)
   dispersion.push(dispersion_numcalculated.toFixed(2))
+  finalresult()
 }
+
+function finalresult(){
+  document.querySelector(".popup2").style.display = "block";
+  document.getElementById("modus").innerHTML = modus;
+  document.getElementById("median").innerHTML = med;
+  document.getElementById("quartilelist").innerHTML = quartilelist;
+  document.getElementById("upperquartile").innerHTML = upperquartile;
+  document.getElementById("lowerquartile").innerHTML = lowerquartile;
+  document.getElementById("average").innerHTML = average;
+  document.getElementById("dispersion").innerHTML = dispersion;
+}
+
+document.querySelector("#close2").addEventListener("click", function(){
+  document.querySelector(".popup2").style.display = "none";
+});
 

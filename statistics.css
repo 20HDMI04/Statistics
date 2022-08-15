@@ -91,3 +91,35 @@ a{
     text-align: center;
     width: auto;
 }
+.popup2{
+    background-color:antiquewhite;
+    width: 420px;
+    padding: 30px 40px;
+    position: absolute;
+    transform: translate(-50%,-50%);
+    left: 50%;
+    top: 50%;
+    border-radius: 8px;
+    font-family: "Poppins",sans-serif;
+    display: none; 
+    text-align: center;
+    border: 1px solid black;
+}
+.popup2 button{
+    display: block;
+    margin:  0 0 20px auto;
+    background-color: transparent;
+    font-size: 30px;
+    color: #ffffff;
+    background: #03549a;
+    border-radius: 100%;
+    width: 40px;
+    height: 40px;
+    border: none;
+    outline: none;
+    cursor: pointer;
+}
+.felxeverydiv{
+    display: flex;
+    flex-direction:row;
+}
