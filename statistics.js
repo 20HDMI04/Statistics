@@ -231,3 +231,12 @@ document.querySelector("#close2").addEventListener("click", function(){
   document.querySelector(".popup2").style.display = "none";
 });
 
+let w = screen.innerWidth;
+while (w < 660) {
+  if(w < 660){
+    document.querySelector(".windowbarrier").style.display = "block";
+  }else{
+    document.querySelector(".windowbarrier").style.display = "none";
+  }
+}
+

@@ -123,3 +123,16 @@ a{
     display: flex;
     flex-direction:row;
 }
+#windowbarrier{
+    background-color: #de0a26;
+    font-family: "Audiowide", sans-serif;
+    width: 600px;
+    padding: 30px 40px;
+    position: absolute;
+    transform: translate(-50%,-50%);
+    left: 50%;
+    top: 50%;
+    border-radius: 8px;
+    display: none; 
+    text-align: center;
+}
