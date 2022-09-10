@@ -1,52 +1,54 @@
-window.addEventListener("load", function(){
-    setTimeout(
-        function open(event){
-            document.querySelector(".popup").style.display = "block";
-        },
-        500
-    )
+window.addEventListener("load", function () {
+  setTimeout(
+    function open(event) {
+      document.querySelector(".popup").style.display = "block";
+    },
+    500
+  );
 });
 
 
-document.querySelector("#close").addEventListener("click", function(){
-    document.querySelector(".popup").style.display = "none";
+document.querySelector("#close").addEventListener("click", function () {
+  document.querySelector(".popup").style.display = "none";
 });
-document.querySelector("#close1").addEventListener("click", function(){
+document.querySelector("#close1").addEventListener("click", function () {
   document.querySelector(".popup").style.display = "none";
 });
 
-var x, rn, cn;
+let x, rn, cn;
 function makegrid() // function called after submit button is clicked
 {
   rn = parseInt(document.getElementById("n1").value); //fetches the entered rows by user
   cn = parseInt(document.getElementById("n2").value); //fetches the entered column by user
 
-  for (var r = 0; r < rn; r++) {
+  for (let r = 0; r < rn; r++) {
     x = document.getElementById("table").insertRow(r); //insert row to the table
-    for (var c = 0; c < cn; c++) {
-      var y = x.insertCell(c); //insert cells to each row
+    for (let c = 0; c < cn; c++) {
+      x.insertCell(c); //insert cells to each row
     }
-  }inputmaker()
-}
-
-function inputmaker(){
-const td = document.querySelectorAll('td')
-for (let i = 6; i < td.length; i++) {
-  const input = document.createElement('input')
-  input.type = 'number'
-  td[i].appendChild(input).setAttribute("id", `${i}`)
- }
-inputselector()
-}
-function inputselector(){
-  const myNodelist = document.querySelectorAll('input')
-  window.mynodelist = myNodelist
-
   }
+  inputmaker();
+}
+
+function inputmaker() {
+  const td = document.querySelectorAll('td');
+  for (let i = 6; i < td.length; i++) {
+    const input = document.createElement('input');
+    input.type = 'number';
+    td[i].appendChild(input).setAttribute("id", `${i}`);
+  }
+  inputselector();
+}
+
+function inputselector() {
+  const myNodelist = document.querySelectorAll('input');
+  window.mynodelist = myNodelist;
+}
 //quantitynumbers is a frequencynumbers and frequencynumber is a quantitynumbers
 
-const quantitynumbers = [];
-const frequencynumbers = [];
+const darabszamok = [];
+const ertekek = [];
+let kicsomagolt = [];
 
 const modus = [];
 const med = [];
@@ -57,166 +59,102 @@ const average = [];
 const dispersion = [];
 
 
-function numsorter(){
+function numsorter() {
   let ind = 4;
   while (ind < window.mynodelist.length) {
-    if ( ind & 1 == 1) {
-      frequencynumbers.push(window.mynodelist[ind].value);
-  } else {
-      quantitynumbers.push(window.mynodelist[ind].value);
+    if ((ind & 1) == 1) {
+      ertekek.push(window.mynodelist[ind].value);
+    } else {
+      darabszamok.push(window.mynodelist[ind].value);
+    }
+    ind++;
   }
-   ind++; 
-  }
-    Modus();
+  Modus();
 }
 
-function Modus(){
+function Modus() {
   let idx1 = -1;
-  while (idx1 < quantitynumbers.length) {
-    if (quantitynumbers[idx1] == Math.max(...quantitynumbers)) {
-      modus.push(frequencynumbers[idx1])
+  while (idx1 < darabszamok.length) {
+    if (darabszamok[idx1] == Math.max(...darabszamok)) {
+      modus.push(ertekek[idx1]);
       break;
     } else {
       idx1++;
     }
   }
-  median1()
+  median1();
 }
 
 
-function median1(){
-  for (let idx2 = 0; idx2 < quantitynumbers.length; idx2++) {
-    for (let idx3 = 0; idx3 < quantitynumbers[idx2]; idx3++) {
-      quartilelist.push(frequencynumbers[idx2])
+function median1() {
+  kicsomagolt = [];
+  for (let i = 0; i < darabszamok.length; i++) {
+    for (let j = 0; j < darabszamok[i]; j++) {
+      kicsomagolt.push(parseFloat(ertekek[i]));
     }
   }
-  median2()
-}
+  kicsomagolt = kicsomagolt.sort((a, b) => a - b);
+  const middle = Math.floor(kicsomagolt.length / 2);
 
-function median2(){
-  let mediannum1 = quartilelist.length / 2;
-  let mediannum2 = mediannum1 + 1;
-  let mediannum3 = mediannum1 - 1;
-  let mediannum4 = Math.floor(quartilelist.length / 2);
-  
-  if (quartilelist.length & 1 == 1) {
-                med.push(quartilelist[mediannum4]);
-  } else {      
-                if(quartilelist.length == 2){
-                  if (quartilelist[mediannum1] == quartilelist[mediannum3]) {
-                    med.push(quartilelist[mediannum1]);
-                } else {
-                    med.push(parseInt(quartilelist[mediannum1]) + parseInt(quartilelist[mediannum3]) / 2);
-              }
-      } else {
-                if (quartilelist[mediannum3] == quartilelist[mediannum1]) {
-                    med.push(quartilelist[mediannum1]);
-              } else {
-                    med.push(Number((Number(quartilelist[mediannum1]) + Number(quartilelist[mediannum3])) /2));
-              }
-        }
-                
- }
- calculatequartileup()
-}
-
- function calculatequartileup(){
-    if (quartilelist.length & 1 == 1) {
-      //páratlan
-        let up_quartilevariable1 = (quartilelist.length -1) / 2;
-        if (up_quartilevariable1 & 1 == 1) {
-          //páratlan fél
-          let up_quartilevariable2 = up_quartilevariable1 / 2;
-          upperquartile.push(quartilelist[Math.ceil(parseInt(up_quartilevariable1 + up_quartilevariable2))]);
-        } else {
-          //páros fél 
-          let up_quartilevariable3 = up_quartilevariable1 / 2;
-          upperquartile.push(parseInt(parseInt(quartilelist[up_quartilevariable1 + up_quartilevariable3]) + parseInt(quartilelist[up_quartilevariable1 + up_quartilevariable3 + 1])) /2);
-        }
-    } else {
-      //páros
-      let up_quartilevariable4 = (quartilelist.length -2) / 2;
-        if (up_quartilevariable4 & 1 == 1) {
-          //páratlan fél
-          let up_quartilevariable5 = up_quartilevariable4 / 2;
-          upperquartile.push(quartilelist[Math.ceil(parseInt(up_quartilevariable4 + up_quartilevariable5))]);
-        } else {
-          //páros fél 
-          let up_quartilevariable6 = up_quartilevariable4 / 2;
-          let up_quartilevariable7 = up_quartilevariable4 + 1;
-          let up_quartilevariable8 = up_quartilevariable7 + 1;
-          upperquartile.push((Number(quartilelist[up_quartilevariable7 + up_quartilevariable6]) + Number(quartilelist[up_quartilevariable8 + up_quartilevariable6])) / 2);
-          
-    }
-  }
- calculatequartilelow()
-}
-
- 
- function calculatequartilelow(){
-  if (quartilelist.length & 1 == 1) {
-    //páratlan
-          let low_quartilevariable1 = (quartilelist.length -1) / 2;
-          if (low_quartilevariable1 & 1 == 1) {
-            //páratlanfél
-            let low_quartilevariable2 = low_quartilevariable1 / 2;
-            lowerquartile.push(quartilelist[Math.floor(low_quartilevariable2)])
-          } else {
-            //párosfél
-            let low_quartilevariable3 = low_quartilevariable1 / 2;
-            let low_quartilevariable4 = low_quartilevariable3 - 1;
-            lowerquartile.push(Number(Number(Number(quartilelist[low_quartilevariable4]) + Number(quartilelist[low_quartilevariable3])) /2))
-          }
+  if (kicsomagolt.length % 2 == 0) {
+    med.push((kicsomagolt[middle] + kicsomagolt[middle - 1]) / 2);
   } else {
-    //páros
-          let low_quartilevariable5 = (quartilelist.length -2) / 2;
-          if (low_quartilevariable5 & 1 == 1) {
-            //páratlanfél
-            let low_quartilevariable6 = low_quartilevariable5 / 2;
-            lowerquartile.push(quartilelist[Math.floor(low_quartilevariable6)])
-          } else {//problem
-            //párosfél
-            let low_quartilevariable7 = low_quartilevariable5 / 2;
-            let low_quartilevariable8 = low_quartilevariable7 - 1;
-            lowerquartile.push(Number(Number(Number(quartilelist[low_quartilevariable8]) + Number(quartilelist[low_quartilevariable7])) /2))
-    } 
+    med.push(kicsomagolt[middle]);
   }
-  average_calculate()
+
+  calculatequartileup();
+}
+
+function calculatequartileup() {
+  // 0.75
+  const harmad = (kicsomagolt.length - 1) * 0.75;
+  const kerek_harmad = Math.floor(harmad);
+  const kulonbseg = harmad - kerek_harmad;
+  if (kicsomagolt[kerek_harmad + 1] !== undefined) {
+    upperquartile.push(kicsomagolt[kerek_harmad] + kulonbseg * (kicsomagolt[kerek_harmad + 1] - kicsomagolt[kerek_harmad]));
+  } else {
+    upperquartile.push(kicsomagolt[kerek_harmad]);
+  }
+  calculatequartilelow();
+}
+
+
+function calculatequartilelow() {
+  const harmad = (kicsomagolt.length - 1) * 0.25;
+  const kerek_harmad = Math.floor(harmad);
+  const kulonbseg = harmad - kerek_harmad;
+  if (kicsomagolt[kerek_harmad + 1] !== undefined) {
+    lowerquartile.push(kicsomagolt[kerek_harmad] + kulonbseg * (kicsomagolt[kerek_harmad + 1] - kicsomagolt[kerek_harmad]));
+  } else {
+    lowerquartile.push(kicsomagolt[kerek_harmad]);
+  }
+  average_calculate();
 }
 
 let calculatelist = [];
 let total = 0;
 let quantitynumbertotal = 0;
 function average_calculate() {
-  for (let average_variable1 = 0; average_variable1 < quantitynumbers.length; average_variable1++) {
-    calculatelist.push(parseInt(quantitynumbers[average_variable1] * frequencynumbers[average_variable1]));
-  }
-  for (let indx = 0; indx < calculatelist.length; indx++) {
-    total = parseInt(total + calculatelist[indx]);
-  }
-  for (let avr = 0; avr < quantitynumbers.length; avr++) {
-    quantitynumbertotal = parseInt(parseInt(quantitynumbertotal) + parseInt(quantitynumbers[avr]));
-  }
-  let average_num = (parseInt(total) / parseInt(quantitynumbertotal));
-  average.push(average_num.toFixed(2));
+  let sum = kicsomagolt.reduce((e, szam) => e + szam);
+  average.push((sum / kicsomagolt.length).toFixed(2));
   dispersion_calculate();
 }
 
-let dispersionvariablelist = [];
+let dispersionletiablelist = [];
 function dispersion_calculate() {
-  for (let index = 0; index < quantitynumbers.length; index++) {
-    dispersionvariablelist.push(quantitynumbers[index]*((frequencynumbers[index] - average)**2));    
-  };
-  let dispersionvariablesum = 0;
-  for (let idx4 = 0; idx4 < dispersionvariablelist.length; idx4++) {
-    dispersionvariablesum = dispersionvariablesum + dispersionvariablelist[idx4];
+  for (let index = 0; index < darabszamok.length; index++) {
+    dispersionletiablelist.push(darabszamok[index] * ((ertekek[index] - average) ** 2));
   }
-  let dispersion_numcalculated = Math.sqrt(dispersionvariablesum / 2)
-  dispersion.push(dispersion_numcalculated.toFixed(2))
-  finalresult()
+  let dispersionletiablesum = 0;
+  for (let idx4 = 0; idx4 < dispersionletiablelist.length; idx4++) {
+    dispersionletiablesum = dispersionletiablesum + dispersionletiablelist[idx4];
+  }
+  let dispersion_numcalculated = Math.sqrt(dispersionletiablesum / 2);
+  dispersion.push(dispersion_numcalculated.toFixed(2));
+  finalresult();
 }
 
-function finalresult(){
+function finalresult() {
   document.querySelector(".popup2").style.display = "block";
   document.getElementById("modus").innerHTML = modus;
   document.getElementById("median").innerHTML = med;
@@ -227,16 +165,7 @@ function finalresult(){
   document.getElementById("dispersion").innerHTML = dispersion;
 }
 
-document.querySelector("#close2").addEventListener("click", function(){
+document.querySelector("#close2").addEventListener("click", function () {
   document.querySelector(".popup2").style.display = "none";
 });
-
-let w = screen.innerWidth;
-while (w < 660) {
-  if(w < 660){
-    document.querySelector(".windowbarrier").style.display = "block";
-  }else{
-    document.querySelector(".windowbarrier").style.display = "none";
-  }
-}
 

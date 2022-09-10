@@ -1,46 +1,50 @@
-table{
-        margin: auto;
-        width: 650px;
-        border: 1px solid black;
-        background-color: black;
+table {
+    margin: auto;
+    width: 650px;
+    border: 1px solid black;
+    background-color: black;
 }
 
-td{
-        text-align: center;
-        border: 1px solid black;
-        background-color: antiquewhite;
-        
-        
+td {
+    text-align: center;
+    border: 1px solid black;
+    background-color: antiquewhite;
+
+
 }
 
-p{
+p {
     font-weight: bold;
     margin: 1px;
 }
-.p{
-        margin: 0px;
+
+.p {
+    margin: 0px;
 }
-.table{
-        width: 300px;
-        margin: auto;
+
+.table {
+    width: 300px;
+    margin: auto;
 }
-.popup{
-    background-color:antiquewhite;
+
+.popup {
+    background-color: antiquewhite;
     width: 420px;
     padding: 30px 40px;
     position: absolute;
-    transform: translate(-50%,-50%);
+    transform: translate(-50%, -50%);
     left: 50%;
     top: 50%;
     border-radius: 8px;
-    font-family: "Poppins",sans-serif;
-    display: none; 
+    font-family: "Poppins", sans-serif;
+    display: none;
     text-align: center;
     border: 1px solid black;
 }
-.popup button{
+
+.popup button {
     display: block;
-    margin:  0 0 20px auto;
+    margin: 0 0 20px auto;
     background-color: transparent;
     font-size: 30px;
     color: #ffffff;
@@ -52,16 +56,19 @@ p{
     outline: none;
     cursor: pointer;
 }
-.popup h2{
-margin-top: -20px;
+
+.popup h2 {
+    margin-top: -20px;
 }
-.popup p{
+
+.popup p {
     font-size: 14px;
     text-align: justify;
     margin: 20px 0;
     line-height: 25px;
 }
-a{
+
+a {
     display: block;
     width: 150px;
     position: relative;
@@ -73,41 +80,46 @@ a{
     text-decoration: none;
     padding: 8px 0;
 }
-#meny{
-    margin-right: 83px ;
+
+#meny {
+    margin-right: 83px;
     margin-left: 83px;
 }
-#gyakor{
+
+#gyakor {
     display: block;
     margin-left: 100px;
     margin-top: auto;
     margin-right: auto;
     margin-bottom: auto;
 }
-.flexbox{
+
+.flexbox {
     display: flex;
-    flex-direction:row;
+    flex-direction: row;
     margin: auto;
     text-align: center;
     width: auto;
 }
-.popup2{
-    background-color:antiquewhite;
+
+.popup2 {
+    background-color: antiquewhite;
     width: 420px;
     padding: 30px 40px;
     position: absolute;
-    transform: translate(-50%,-50%);
+    transform: translate(-50%, -50%);
     left: 50%;
     top: 50%;
     border-radius: 8px;
-    font-family: "Poppins",sans-serif;
-    display: none; 
+    font-family: "Poppins", sans-serif;
+    display: none;
     text-align: center;
     border: 1px solid black;
 }
-.popup2 button{
+
+.popup2 button {
     display: block;
-    margin:  0 0 20px auto;
+    margin: 0 0 20px auto;
     background-color: transparent;
     font-size: 30px;
     color: #ffffff;
@@ -119,20 +131,28 @@ a{
     outline: none;
     cursor: pointer;
 }
-.felxeverydiv{
+
+.felxeverydiv {
     display: flex;
-    flex-direction:row;
+    flex-direction: row;
 }
-#windowbarrier{
+
+#windowbarrier {
     background-color: #de0a26;
     font-family: "Audiowide", sans-serif;
     width: 600px;
     padding: 30px 40px;
     position: absolute;
-    transform: translate(-50%,-50%);
+    transform: translate(-50%, -50%);
     left: 50%;
     top: 50%;
     border-radius: 8px;
-    display: none; 
+    display: none;
     text-align: center;
+}
+
+@media screen and (max-width: 660px) {
+    #windowbarrier {
+        display: block;
+    }
 }
