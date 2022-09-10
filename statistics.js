@@ -120,13 +120,13 @@ function calculatequartileup() {
 
 
 function calculatequartilelow() {
-  const harmad = (kicsomagolt.length - 1) * 0.25;
-  const kerek_harmad = Math.floor(harmad);
-  const kulonbseg = harmad - kerek_harmad;
-  if (kicsomagolt[kerek_harmad + 1] !== undefined) {
-    lowerquartile.push(kicsomagolt[kerek_harmad] + kulonbseg * (kicsomagolt[kerek_harmad + 1] - kicsomagolt[kerek_harmad]));
+  const negyed = (kicsomagolt.length - 1) * 0.25;
+  const kerek_negyed = Math.floor(negyed);
+  const kulonbseg = negyed - kerek_negyed;
+  if (kicsomagolt[kerek_negyed + 1] !== undefined) {
+    lowerquartile.push(kicsomagolt[kerek_negyed] + kulonbseg * (kicsomagolt[kerek_negyed + 1] - kicsomagolt[kerek_negyed]));
   } else {
-    lowerquartile.push(kicsomagolt[kerek_harmad]);
+    lowerquartile.push(kicsomagolt[kerek_negyed]);
   }
   average_calculate();
 }
